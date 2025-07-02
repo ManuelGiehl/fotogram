@@ -51,10 +51,10 @@ function openPhoto(index) {
   overlay.innerHTML = createDialogContent(index);
   
   overlay.onclick = () => overlay.remove();
-  overlay.querySelector('.dialog-bubble').onclick = e => e.stopPropagation();
-  overlay.querySelector('.dialog-close').onclick = e => { e.stopPropagation(); overlay.remove(); };
-  overlay.querySelector('#prev').onclick = e => { e.stopPropagation(); openPhoto((index - 1 + images.length) % images.length); };
-  overlay.querySelector('#next').onclick = e => { e.stopPropagation(); openPhoto((index + 1) % images.length); };
+  overlay.querySelector('.dialog-bubble').onclick = dialogBubble => dialogBubble.stopPropagation();
+  overlay.querySelector('.dialog-close').onclick = dialogClose => { dialogClose.stopPropagation(); overlay.remove(); };
+  overlay.querySelector('#prev').onclick = prevArrow => { prevArrow.stopPropagation(); openPhoto((index - 1 + images.length) % images.length); };
+  overlay.querySelector('#next').onclick = nextArrow => { nextArrow.stopPropagation(); openPhoto((index + 1) % images.length); };
   
   document.body.appendChild(overlay);
 }
