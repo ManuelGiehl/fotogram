@@ -286,6 +286,9 @@ transform: rotate(180deg);
     .dialog-img {
         border-radius: 10px;
     }
+    .dialog-close {
+        right: 12px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -314,6 +317,9 @@ transform: rotate(180deg);
     }
     .dialog-img {
         border-radius: 8px;
+    }
+    .dialog-close {
+        right: 8px;
     }
 }
 
