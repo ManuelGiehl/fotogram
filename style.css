@@ -2,6 +2,9 @@ body {
     margin: 0;
     background-color: #05171e;
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-container {
@@ -28,9 +31,9 @@ body {
 }
 
 main {
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     overflow-y: auto;
     justify-content: space-between;
 }
@@ -53,14 +56,13 @@ main {
     margin-bottom: 160px;
 }
 
-.main-container{
+.main-container {
     background-color: #05171e;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
+    width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-    width: 100%;
 }
 
 .photo-container {
@@ -101,6 +103,7 @@ footer {
     height: 150px;
     margin-top: 64px;
     width: 100%;
+    flex-shrink: 0;
 }
 
 .footer-content {
