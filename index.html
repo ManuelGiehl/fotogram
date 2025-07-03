@@ -11,12 +11,14 @@
 </head>
 
 <header>
-    <div class="header-container">
-        <div class="header-content">
+    <div class="header-container">    
+        <div class="header-content">   
             <div class="header-logo">
                 <img class="logo-desktop" src="./img/Fotogram_Logo.svg" alt="Fotogram">
-                <img class="logo-mobile" src="./img/favicon.png" alt="Fotogram Favicon">
+                <img class="logo-mobile" src="./img/favicon.png" alt="Fotogram Favicon">  
             </div>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            <button class="upload-button" onclick="document.getElementById('fileInput').click()">Upload picture</button>
         </div>
     </div>
 </header>

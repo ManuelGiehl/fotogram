@@ -14,11 +14,13 @@ body {
     background-color: #082028;
     box-sizing: border-box;
     width: 100%;
+    justify-content: space-between;
 }
 
 .header-content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     max-width: 1920px;
     margin: 0 auto;
     width: 100%;
@@ -28,6 +30,49 @@ body {
 .header-logo {
     width: 264px;
     padding-left: 40px;
+}
+
+.upload-button {
+    background-color: #0a2632;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+    margin-right: 40px;
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+.upload-button:hover {
+    transform: scale(1.05);
+    background-color: #1e4a5a;
+}
+
+.upload-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #16323b;
+    color: #fff;
+    padding: 20px 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    z-index: 2000;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    min-width: 280px;
 }
 
 main {
@@ -294,6 +339,28 @@ transform: rotate(180deg);
     }
 }
 
+
+@media (max-width: 600px) {
+    .logo-desktop {
+        display: none;
+    }
+    .logo-mobile {
+        display: block;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 450px) {
+    .upload-button {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin-right: 16px;
+    }
+}
+
+
+
 @media (max-width: 400px) {
     .photos{
         width: 240px;
@@ -326,16 +393,6 @@ transform: rotate(180deg);
     }
 }
 
-@media (max-width: 400px) {
-    .logo-desktop {
-        display: none;
-    }
-    .logo-mobile {
-        display: block;
-        width: 64px;
-        height: 64px;
-    }
-}
 
 @media (max-width: 1100px) {
   .dialog-bubble {

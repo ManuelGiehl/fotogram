@@ -20,6 +20,57 @@ function renderImages() {
 
 function init() {
   renderImages();
+  initFileUpload();
+}
+
+function initFileUpload() {
+  const fileInput = document.getElementById('fileInput');
+  
+  fileInput.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      if (file.type.startsWith('image/')) {
+        uploadImage(file);
+      } else {
+        alert('Bitte wähle eine Bilddatei aus!');
+      }
+    }
+  });
+}
+
+function uploadImage(file) {
+  const reader = new FileReader();
+  
+      reader.onload = function(e) {
+      const newImage = {
+        src: e.target.result, 
+        alt: 'Uploaded Image'
+      };
+
+      images.push(newImage);
+
+      renderImages();
+      showUploadSuccess();
+
+      console.log('Bild erfolgreich hochgeladen:', newImage.alt);
+    };
+  
+  reader.onerror = function() {
+    alert('Fehler beim Lesen der Datei!');
+  };
+  reader.readAsDataURL(file);
+}
+
+function showUploadSuccess() {
+  const popup = document.createElement('div');
+  popup.className = 'upload-popup';
+  popup.innerHTML = 'Das Bild wurde erfolgreich hochgeladen';
+  
+  document.body.appendChild(popup);
+  
+  setTimeout(() => {
+    popup.remove();
+  }, 3000);
 }
 
 function createDialogContent(index) {
@@ -58,3 +109,4 @@ function openPhoto(index) {
   
   document.body.appendChild(overlay);
 }
+
